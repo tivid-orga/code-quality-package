@@ -1,7 +1,15 @@
+It looks like there is a small error in your README. The issue is that the generated configuration files (`biome.json` and `.prettierrc.mjs`) are not accurately reflected in the configuration section of the README. The correct format for the configuration files based on your provided example should be:
+
+- `biome.json` should be extending `biome-config.jsonc`.
+- `.prettierrc.mjs` should be exporting from `tivid-code-quality/prettier-config.mjs`.
+
+Here is the corrected README content:
+
+```markdown
 # Tivid Code Quality Package
 
 ## 🚀 Overview
-Tivid Code Quality Package is an easy-to-use **npm package** that sets up **Biome** and **Prettier** with pre-configured settings. When installed, it automatically generates configuration files (`biome.json` and `.prettierrc.json`) in your project, extending the settings from the package.
+Tivid Code Quality Package is an easy-to-use **npm package** that sets up **Biome** and **Prettier** with pre-configured settings. When installed, it automatically generates configuration files (`biome.json` and `.prettierrc.mjs`) in your project, extending the settings from the package.
 
 ## 📦 Installation
 
@@ -13,7 +21,7 @@ npm install tivid-code-quality --save-dev
 
 Once installed, it will automatically create:
 - `biome.json`
-- `.prettierrc.json`
+- `.prettierrc.mjs`
 
 These files will extend the configurations from `node_modules/tivid-code-quality`.
 
@@ -24,15 +32,14 @@ The package generates the following configuration files:
 ### `biome.json`
 ```json
 {
-  "extends": "./node_modules/tivid-code-quality/biome-config.json"
+  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "extends": ["./node_modules/tivid-code-quality/biome-config.jsonc"]
 }
 ```
 
-### `.prettierrc.json`
-```json
-{
-  "extends": "./node_modules/tivid-code-quality/prettier-config.json"
-}
+### `.prettierrc.mjs`
+```js
+export {default} from 'tivid-code-quality/prettier-config.mjs';
 ```
 
 If these files already exist in your project, they will **not** be overwritten.
@@ -60,4 +67,5 @@ To get the latest configurations, update the package:
 npm update tivid-code-quality
 ```
 
-If needed, delete the old `biome.json` and `.prettierrc.json`, then reinstall the package to regenerate them.
+If needed, delete the old `biome.json` and `.prettierrc.mjs`, then reinstall the package to regenerate them.
+```
