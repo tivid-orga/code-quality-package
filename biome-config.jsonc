@@ -15,12 +15,37 @@
 	"overrides": [
 		{
 			// vue specific corrections cause biome does not know whats used in the template section
+			// also remove all auto fixes, since biome destroys the vue file
 			"include": ["*.vue"],
 			"linter": {
 				"rules": {
 					"correctness": {
 						"noUnusedVariables": "off",
 						"noUnusedImports": "off"
+					},
+					"style": {
+						"useBlockStatements": {
+							"level": "error",
+							"fix": "unsafe"
+						},
+						"useTemplate": {
+							"level": "error",
+							"fix": "unsafe"
+						},
+						"noUnusedTemplateLiteral": {
+							"level": "error",
+							"fix": "unsafe"
+						},
+						"noUselessElse": {
+							"level": "error",
+							"fix": "unsafe"
+						}
+					},
+					"complexity": {
+						"useSimplifiedLogicExpression": {
+							"level": "error",
+							"fix": "unsafe"
+						}
 					}
 				}
 			}
