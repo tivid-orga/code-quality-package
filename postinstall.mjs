@@ -6,11 +6,10 @@ import {resolve} from 'node:path';
 import {fileURLToPath} from 'node:url';
 
 const Dirname = fileURLToPath(new URL('.', import.meta.url));
-const rootPath = resolve(Dirname, '..');
-
+const rootPath = resolve(Dirname, '../..');
 const files = {
-	'biome.json': '{ "extends": "./node_modules/tivid-code-quality/biome-config.json" }',
-	'.prettierrc.json': '{ "extends": "./node_modules/tivid-code-quality/prettier-config.json" }'
+	'biome.json': '{ "extends": "./node_modules/tivid-code-quality/biome-config.jsonc" }',
+	'.prettierrc.json': '{ "extends": "./node_modules/tivid-code-quality/prettier-config.jsonc" }'
 };
 
 for (const [fileName, content] of Object.entries(files)) {
