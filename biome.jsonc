@@ -1,0 +1,114 @@
+{
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"vcs": {
+		"enabled": false,
+		"clientKind": "git",
+		"useIgnoreFile": false
+	},
+	"files": {
+		"ignoreUnknown": false,
+		"ignore": ["node_modules", ".nuxt", ".output", ".data"]
+	},
+	"organizeImports": {
+		"enabled": true
+	},
+	"overrides": [
+		{
+			// vue specific corrections cause biome does not know whats used in the template section
+			"include": ["*.vue"],
+			"linter": {
+				"rules": {
+					"correctness": {
+						"noUnusedVariables": "off",
+						"noUnusedImports": "off"
+					}
+				}
+			}
+		}
+	],
+	"linter": {
+		"enabled": true,
+		"rules": {
+			"all": true,
+			"style": {
+				"noDefaultExport": "off",
+				"useBlockStatements": {
+					"level": "error",
+					"fix": "safe"
+				},
+				"useTemplate": {
+					"level": "error",
+					"fix": "safe"
+				},
+				"noUnusedTemplateLiteral": {
+					"level": "error",
+					"fix": "safe"
+				},
+				"noUselessElse": {
+					"level": "error",
+					"fix": "safe"
+				},
+				"useNamingConvention": {
+					"level": "error",
+					"options": {
+						"conventions": [
+							{
+								"formats": ["camelCase", "CONSTANT_CASE", "PascalCase"]
+							}
+						]
+					}
+				}
+			},
+			"correctness": {
+				"noUndeclaredDependencies": "off",
+				"useImportExtensions": "off",
+				"useHookAtTopLevel": "off",
+				"noUnusedImports": {
+					"fix": "none",
+					"level": "warn"
+				}
+			},
+			"complexity": {
+				"useSimplifiedLogicExpression": {
+					"level": "error",
+					"fix": "safe"
+				},
+				"noExcessiveCognitiveComplexity": {
+					"level": "off"
+				}
+			},
+			"nursery": {
+				"all": true,
+				"useImportRestrictions": "off",
+				"noProcessEnv": "off",
+				"noSecrets": "off" // regex randomly catches normal strings
+			}
+		}
+	},
+	"formatter": {
+		"enabled": true,
+		"indentStyle": "tab",
+		"indentWidth": 2,
+		"lineWidth": 100,
+		"bracketSpacing": false,
+		"attributePosition": "multiline",
+		"lineEnding": "crlf",
+		"ignore": ["*.vue"]
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single",
+			"trailingCommas": "none",
+			"semicolons": "always"
+		}
+	},
+	"css": {
+		"formatter": {
+			"quoteStyle": "single",
+			"lineWidth": 100
+		},
+		"assists": {
+			"enabled": true
+		}
+	}
+}
