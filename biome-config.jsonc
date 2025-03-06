@@ -1,5 +1,5 @@
 {
-	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"$schema": "../@biomejs/biome/configuration_schema.json", // schema is correct when installed into project
 	"vcs": {
 		"enabled": false,
 		"clientKind": "git",
