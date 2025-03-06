@@ -11,7 +11,7 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "https://github.com/tivid-orga/code-quality-package.git"
+		"url": "git+https://github.com/tivid-orga/code-quality-package.git"
 	},
 	"author": "David S. (@davidS2-2424)",
 	"homepage": "https://github.com/tivid-orga/code-quality-package#readme"
