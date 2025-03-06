@@ -1,8 +1,8 @@
 {
 	"name": "tivid-code-quality",
-	"version": "1.0.8",
+	"version": "1.0.9",
 	"type": "module",
-	"description": "A package for automatic Biome and Prettier setup",
+	"description": "A package for automatic linting and formatting",
 	"scripts": {
 		"postinstall": "node postinstall.mjs"
 	},
