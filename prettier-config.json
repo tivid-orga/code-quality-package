@@ -1,7 +1,7 @@
 {
 	"overrides": [
 		{
-			"files": "*.vue", // we only need prettier to format vue files since biome handles everything else
+			"files": "*.vue",
 			"options": {
 				"printWidth": 120,
 				"tabWidth": 2,
