@@ -9,7 +9,7 @@ const files = {
 		"$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
 		"extends": ["./node_modules/tivid-code-quality/biome-config.jsonc"]
 	}`,
-	".prettierrc.mjs": `export {default} from 'tivid-code-quality/prettier-config.json';`,
+	".prettierrc.mjs": `export {default} from 'tivid-code-quality/prettier-config.mjs';`,
 };
 
 for (const [fileName, content] of Object.entries(files)) {

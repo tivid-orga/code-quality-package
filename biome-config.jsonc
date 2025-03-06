@@ -28,6 +28,7 @@
 	],
 	"linter": {
 		"enabled": true,
+		"ignore": [".prettierrc.mjs"],
 		"rules": {
 			"all": true,
 			"style": {
@@ -74,7 +75,8 @@
 					"fix": "safe"
 				},
 				"noExcessiveCognitiveComplexity": {
-					"level": "off"
+					"level": "off",
+					"options": {}
 				}
 			},
 			"nursery": {
