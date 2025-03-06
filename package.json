@@ -1,9 +1,10 @@
 {
 	"name": "tivid-code-quality",
 	"version": "1.0.0",
+	"type": "module",
 	"description": "A package for automatic Biome and Prettier setup",
 	"scripts": {
-		"postinstall": "node postinstall.js"
+		"postinstall": "node postinstall.mjs"
 	},
 	"dependencies": {
 		"@biomejs/biome": "1.9.4",
