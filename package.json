@@ -1,0 +1,12 @@
+{
+    "name": "tivid-code-quality",
+    "version": "1.0.0",
+    "scripts": {
+      "postinstall": "node postinstall.js"
+    },
+    "dependencies": {
+		"@biomejs/biome": "1.9.4",
+		"prettier": "^3.5.1"
+    }
+  }
+  
