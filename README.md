@@ -1,10 +1,3 @@
-It looks like there is a small error in your README. The issue is that the generated configuration files (`biome.json` and `.prettierrc.mjs`) are not accurately reflected in the configuration section of the README. The correct format for the configuration files based on your provided example should be:
-
-- `biome.json` should be extending `biome-config.jsonc`.
-- `.prettierrc.mjs` should be exporting from `tivid-code-quality/prettier-config.mjs`.
-
-Here is the corrected README content:
-
 ```markdown
 # Tivid Code Quality Package
 
@@ -68,4 +61,3 @@ npm update tivid-code-quality
 ```
 
 If needed, delete the old `biome.json` and `.prettierrc.mjs`, then reinstall the package to regenerate them.
-```
